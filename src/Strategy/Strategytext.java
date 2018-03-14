@@ -17,6 +17,5 @@ public class Strategytext {
         System.out.println("10 * 5 = " + context.executeStrategy(10, 5));
 
 
-
     }
 }

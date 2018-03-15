@@ -6,13 +6,15 @@ public class InfantryUnit {
     int armor;
     int hits;
     int damage;
+    String name;
 
     //const
-    public InfantryUnit(int range, int armor, int hits, int damage){
+    public InfantryUnit(int range, int armor, int hits, int damage , String name){
         this.range = range;
         this.armor = armor;
         this.hits = hits;
         this.damage = damage;
+        this.name = name;
     }
 
     //Func takedmg
@@ -23,14 +25,20 @@ public class InfantryUnit {
             hits -= damage-reduction;
         }
         System.out.println("Reduction : "+ reduction+ "\n Damage : "+ damage );
-        System.out.println("Unit has  "+ hits +" hits.");
+        System.out.println(name +" has  "+ hits +" hits.");
+
     }
 
     //Func til at angribe et eller andet
     public void attack(InfantryUnit unit){
-        int attackDamage = (int) (Math.random()*damage)+1;
-        unit.takeDamage(attackDamage);
-        System.out.println("Unit dealt "+attackDamage +" dmg.");
+        if(unit.hits>0) {
+            int attackDamage = (int) (Math.random() * damage) + 1;
+            unit.takeDamage(attackDamage);
+            System.out.println(unit.name +" dealt " + attackDamage + " dmg.");
+        }else{
+            System.out.println("The "+ unit.name+" has died.");
+        }
+
     }
 
 }

@@ -13,15 +13,17 @@ public class runAppMain {
             System.out.println("----");
         }*/
 
-        HumanInfantryFactory huham1 = new HumanInfantryFactory();
-        HumanInfantryFactory huham2 = new HumanInfantryFactory();
+        InfantryFactory huham1 = new HumanInfantryFactory(0);
+        InfantryFactory huham2 = new HumanInfantryFactory(2);
+        InfantryFactory orcam1 = new OrcInfantryFactory(1);
 
-        InfantryUnit pC = huham1.createUnit(1);
-        InfantryUnit oC = huham2.createUnit(2);
+        InfantryUnit hC1 = huham2.createUnit();
+        InfantryUnit hC2 = huham1.createUnit();
+        InfantryUnit oC1 = orcam1.createUnit();
 
-        while((pC.hits>0) && (oC.hits>0)) {
-            pC.attack(oC);
-            oC.attack(pC);
+        while((hC1.hits>0) && (oC1.hits>0)) {
+            hC1.attack(oC1);
+            oC1.attack(hC1);
             System.out.println("----");
         }
 

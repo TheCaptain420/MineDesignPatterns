@@ -1,11 +1,13 @@
 package Factory;
 
 public class InfantryUnit {
+    //variables
     int range;
     int armor;
     int hits;
     int damage;
 
+    //const
     public InfantryUnit(int range, int armor, int hits, int damage){
         this.range = range;
         this.armor = armor;
@@ -13,6 +15,7 @@ public class InfantryUnit {
         this.damage = damage;
     }
 
+    //Func takedmg
     public void takeDamage(int damage){
         int reduction = (int) (Math.random()*armor);
 
@@ -21,6 +24,7 @@ public class InfantryUnit {
         }
     }
 
+    //Func til at angribe et eller andet
     public void attack(InfantryUnit unit){
         int attackDamage = (int) (Math.random()*damage)+1;
         unit.takeDamage(attackDamage);

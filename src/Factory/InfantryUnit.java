@@ -22,12 +22,15 @@ public class InfantryUnit {
         if(damage>reduction){
             hits -= damage-reduction;
         }
+        System.out.println("Reduction : "+ reduction+ "\n Damage : "+ damage );
+        System.out.println("Unit has  "+ hits +" hits.");
     }
 
     //Func til at angribe et eller andet
     public void attack(InfantryUnit unit){
         int attackDamage = (int) (Math.random()*damage)+1;
         unit.takeDamage(attackDamage);
+        System.out.println("Unit dealt "+attackDamage +" dmg.");
     }
 
 }
